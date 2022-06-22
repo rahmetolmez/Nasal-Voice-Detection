@@ -8,3 +8,5 @@ and oral area are compared, or by a professional that listens to the speech of t
 The aim of this study is to do the analysis of detecting nasal voices automatically with
 the help of deep learning techniques and help children with hypernasality to improve
 their normal speaking voice, with the help of a game.
+
+# Screenshots
