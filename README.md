@@ -12,4 +12,4 @@ their normal speaking voice, with the help of a game.
 # Screenshots
 ## Main Menu
 ![Main Menu](/images/nasalia_main_menu.PNG)
-<a href="Main Menu"><img src="https://github.com/rahmetolmez/Nasal-Voice-Detection/blob/main/images/nasalia_main_menu.PNG" align="left" height="48" width="48" ></a>
+<a href="Main Menu"><img src="https://github.com/rahmetolmez/Nasal-Voice-Detection/blob/main/images/nasalia_main_menu.PNG" align="left" width="480" ></a>
