@@ -11,4 +11,4 @@ their normal speaking voice, with the help of a game.
 
 # Screenshots
 ## Main Menu
-![Main Menu](/images/naslaia_main_menu.PNG)
+![Main Menu](/images/nasalia_main_menu.PNG)
