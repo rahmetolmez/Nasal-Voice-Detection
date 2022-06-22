@@ -10,12 +10,7 @@ the help of deep learning techniques and help children with hypernasality to imp
 their normal speaking voice, with the help of a game.
 
 # Screenshots
-## Main Menu
 <a href="Main Menu"><img src="https://github.com/rahmetolmez/Nasal-Voice-Detection/blob/main/images/nasalia_main_menu.PNG" align="left" width="480" ></a>
-
-## Settings Menu
 <a href="Settings Menu"><img src="https://github.com/rahmetolmez/Nasal-Voice-Detection/blob/main/images/ss2.PNG" align="left" width="480" ></a>
-
-## Gameplay
 <a href="Gameplay 1"><img src="https://github.com/rahmetolmez/Nasal-Voice-Detection/blob/main/images/ss4.PNG" align="left" width="480" ></a>
 <a href="Gameplay 2"><img src="https://github.com/rahmetolmez/Nasal-Voice-Detection/blob/main/images/ss5.PNG" align="left" width="480" ></a>
