@@ -10,3 +10,5 @@ the help of deep learning techniques and help children with hypernasality to imp
 their normal speaking voice, with the help of a game.
 
 # Screenshots
+## Main Menu
+![MainBoard](/images/naslaia_main_menu.PNG)
