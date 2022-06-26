@@ -2,14 +2,6 @@
 ### Author: Rahmet Ali Olmez
 ### November - December 2021
 
-# TODO game initialization takes too long -> loading screen
-# TODO model not good on other people
-# TODO reduce prediction duration to 0.2s
-# DONE stop tongue if no sound below threshold -> noise calibration?
-# TODO reset button
-# TODO diving game
-# TODO hypo and hypernasal
-
 from common import *
 from threading import Thread
 from cnn_model import *
@@ -86,7 +78,6 @@ def goto_menu():
 
 def exit_app():
 	menu.quit = True
-	#ctrl.exit_program = True
 
 def main():
 	frog = Frog(WIN_WIDTH / 2 - 13 * BLOCK_SIZE, 8 * BLOCK_SIZE, 26 * BLOCK_SIZE, 29 * BLOCK_SIZE, 'frog.png', disable_tongue = True)
@@ -102,12 +93,9 @@ def main():
 	diver = Diver(WIN_WIDTH, 0, 32 * BLOCK_SIZE, 32 * BLOCK_SIZE, 'diver.png')
 	treasure = Treasure(WIN_WIDTH / 2, 300, 47 * BLOCK_SIZE, 51 * BLOCK_SIZE, 'treasure_chest.png')
 
-	#test_accuracy(model, 'em_nasal.wav', 1)
-
 	detector_thread = Thread(target = detect_nasality, args = [model])
 	detector_thread.daemon = True
 	detector_thread.start()
-	#print(model.summary())
 	text_fps = text.Text(
 		x = BLOCK_SIZE,
 		y = BLOCK_SIZE,
@@ -143,7 +131,6 @@ def main():
 		font_path = os.path.join('res', 'liko.ttf'),
 		font_size = 6 * BLOCK_SIZE,
 		text_color = (0, 0, 0))
-
 
 	button_play_diver = button.Button(
 		x = WIN_WIDTH / 2 - 24 * BLOCK_SIZE,
@@ -243,18 +230,11 @@ def main():
 		switch_on = ctrl.talk_with_space)
 
 	while not menu.quit:
-		#print(FPS)
 		clock.tick(FPS)
-		
-		#print(clock.get_fps())
-		#pygame.time.delay(4)
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				menu.quit = True
-				#ctrl.exit_program = True
 				ctrl.THREAD_QUIT = True
-			#if event.type == pygame.VIDEORESIZE:
-				#common.WIN = pygame.display.set_mode((event.w, event.h), pygame.RESIZABLE)
 			if event.type == pygame.KEYDOWN:
 				if event.key == pygame.K_ESCAPE:
 					menu.quit = True
@@ -264,9 +244,6 @@ def main():
 					menu.main_menu = False
 				if event.key == pygame.K_SPACE:
 					ctrl.space = True
-				#if event.key == pygame.K_m:
-				#	menu.main_menu = True
-				#	menu.play_frog = False
 				if event.key == pygame.K_RIGHT:
 					ctrl.right_key = True
 				if event.key == pygame.K_LEFT:
@@ -275,8 +252,6 @@ def main():
 					ctrl.d_key = True
 				if event.key == pygame.K_a:
 					ctrl.a_key = True
-				#if event.key == pygame.K_r:
-				#	ctrl.r_key = True
 				if event.key == pygame.K_c:
 					ctrl.c_key = True
 			if event.type == pygame.KEYUP:
@@ -290,10 +265,6 @@ def main():
 					ctrl.d_key = False
 				if event.key == pygame.K_a:
 					ctrl.a_key = False
-				#if event.key == pygame.K_r:
-					#if ctrl.r_key == True:
-					#	reset = True
-					#ctrl.r_key = False
 				if event.key == pygame.K_c:
 					if ctrl.c_key == True:
 						if crt_on:
@@ -309,18 +280,14 @@ def main():
 		if menu.main_menu == True:
 			common.WIN.blit(MENU_BG_IMAGE_FIT, (0, 0))
 			frog.draw()
-			#diver.draw()
-			#treasure.draw()
 			text_title.draw()
 			button_start.draw()
 			button_play_diver.draw()
 			button_settings.draw()
-			#button_exit.draw()
 			if not menu.main_menu_disable:
 				button_start.button_pressed()
 				button_play_diver.button_pressed()
 				button_settings.button_pressed()
-				#button_exit.button_pressed()
 		if menu.settings == True:
 			settings_dialog.draw()
 			text_toggle_fps.draw()
